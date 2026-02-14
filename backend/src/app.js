@@ -41,7 +41,7 @@ app.use((req, res, next) => {
 
 //CORS cross-origin....
 app.use(cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
+    origin: process.env.CLIENT_URL || 'https://shop-manage-frontend.onrender.com',
     credentials: true,
     optionSuccessStatus: 200
 }));
