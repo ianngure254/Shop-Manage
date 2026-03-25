@@ -68,6 +68,16 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
         app.use(morgan('combined'));
     }
 
+// Add right before your /health route
+app.get('/', (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'ShopManage API is running',
+    version: '1.0.0',
+    timestamp: new Date().toISOString()
+  });
+});
+
         //Heath check...
     app.get('/health', (req, res) => {
         res.status(200).json({
